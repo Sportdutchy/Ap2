@@ -1768,7 +1768,7 @@ ENDE FUNKTION</code></pre></div><p>Admin-Prüfung: ausländische Sonderbuchstabe
     else { cta.href = '#s01'; cta.firstChild.nodeValue = 'Alle Schritte geschafft · Wiederholen '; document.getElementById('ctaSub').textContent = ''; }
     document.body.classList.toggle('examonly', !!state.examonly);
     document.querySelectorAll('.examonly').forEach(function(cb){ cb.checked = !!state.examonly; });
-    var cur = current();
+    var cur = (META[String(state.last).slice(1)] ? state.last : 'start');
     var tp = document.getElementById('topP');
     if (cur !== 'start') { var k = META[cur.slice(1)]; tp.textContent = k.filter(function(x){return state.t[x];}).length + '/' + k.length; }
     else tp.textContent = stepsDone + '/' + steps.length;
